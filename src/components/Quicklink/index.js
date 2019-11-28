@@ -4,8 +4,8 @@
  */
 
 // ray test touch <
-import { findDOMNode } from 'react-dom';
 import { createElement, useEffect, useRef } from 'react';
+import { findDOMNode } from 'react-dom';
 import { prefetch, listen } from 'quicklink';
 import rmanifest from 'route-manifest';
 
@@ -37,7 +37,7 @@ export function QLink(Component) {
 
 // TODO?: add `options` param here
 export function QRoute(Component) {
-	return function (props) {
+	return function QRouteComponent(props) {
 		const { component, ...rest } = props;
 		if (component) rest.component = QRoute(component);
 		const ref = rest.ref = useRef(null);
