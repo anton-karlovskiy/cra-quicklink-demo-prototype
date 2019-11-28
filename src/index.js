@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // ray test touch <
-// import { BrowserRouter } from '@/components/Router';
+import { BrowserRouter } from '@/components/Router';
 // ray test touch >
 
 import './index.css';
@@ -11,10 +11,10 @@ import * as serviceWorker from './serviceWorker';
 
 // ray test touch <
 ReactDOM.render(
-  // <BrowserRouter>
-  //   <App />
-  // </BrowserRouter>,
-  <App />,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  // <App />,
   document.getElementById('root')
 );
 // ray test touch >
