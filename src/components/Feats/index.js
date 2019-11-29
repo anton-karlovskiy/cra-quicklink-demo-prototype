@@ -1,6 +1,6 @@
 import React from 'react';
 import items from '@assets/features.json';
-import style from './index.css';
+import style from './index.module.css';
 
 function Item(props) {
 	return (

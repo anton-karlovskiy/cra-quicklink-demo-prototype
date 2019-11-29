@@ -3,7 +3,7 @@ import Loadable from 'react-loadable';
 import { Route, withRouter } from '@components/Router';
 import Footer from '@components/Footer';
 import Hero from '@components/Hero';
-import style from './index.css';
+import style from './index.module.css';
 
 // Route-Split Components
 const loading = () => <div>Loading...</div>;

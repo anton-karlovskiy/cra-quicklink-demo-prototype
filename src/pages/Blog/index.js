@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@components/Router';
 import Intro from '@components/Intro';
 import Card from '@components/Card';
-import style from './index.css';
+import style from './index.module.css';
 
 function Blog(props) {
 	return (

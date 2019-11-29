@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@components/Router';
 import Intro from '@components/Intro';
-import style from './index.css';
+import style from './index.module.css';
 
 function Article(props) {
 	return (

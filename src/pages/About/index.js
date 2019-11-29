@@ -1,6 +1,6 @@
 import React from 'react';
 import Intro from '@components/Intro';
-import style from './index.css';
+import style from './index.module.css';
 
 function About() {
 	return (

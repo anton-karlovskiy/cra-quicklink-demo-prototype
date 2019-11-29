@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '@components/Nav';
-import style from './index.css';
+import style from './index.module.css';
 
 const SHAPES = ['point', 'square', 'penta', 'circle', 'cross'];
 

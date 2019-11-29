@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@components/Router';
-import style from './index.css';
+import style from './index.module.css';
 
 export default class Nav extends React.Component {
 	state = {
