@@ -1,22 +1,21 @@
-import React from 'react';
+
+import React, { Component } from 'react';
+
 import Nav from '@components/Nav';
 import style from './index.module.css';
 
 const SHAPES = ['point', 'square', 'penta', 'circle', 'cross'];
 
-export default class Hero extends React.Component {
-	setShapes = elem => {
-		this.shapes = elem;
-	}
-
+class Hero extends Component {
 	componentDidMount() {
 		const elem = this.shapes;
 		const ww = elem.clientWidth;
 		const wh = elem.clientHeight;
-		const offset = elem.offsetTop;
+		// TODO: not used
+		// const offset = elem.offsetTop;
 		const steps = wh / 2;
 
-		function Particle() {
+		const getParticle = () => {
 			let y = wh;
 			let dir = Math.random() > 0.5 ? -1 : 1;
 			let fric = Math.random() * 3 + 1;
@@ -38,7 +37,7 @@ export default class Hero extends React.Component {
 				let left = x + Math.sin(y * Math.PI / steps) * sine;
 				item.style.transform = `translate3d(${left}px,${y}px,0) scale(${scale}) rotate(${rot}deg)`;
 				return (y > target) || item.remove();
-			}
+			};
 		}
 
 		let last = 0;
@@ -49,11 +48,11 @@ export default class Hero extends React.Component {
 			running = document.hasFocus();
 		};
 
-		function update(ms) {
+		const update = ms => {
 			let len = particles.length;
 			if (running && len < 50 && (ms - last) > 200) {
 				last = ms;
-				particles.push(Particle());
+				particles.push(getParticle());
 			}
 			while (len--) {
 				particles[len]() || particles.splice(len, 1);
@@ -68,16 +67,22 @@ export default class Hero extends React.Component {
 		return false;
 	}
 
+	setShapes = elem => {
+		this.shapes = elem;
+	};
+
 	render() {
 		return (
-			<header className={ style.hero }>
+			<header className={style.hero}>
 				<Nav />
-				<div className={ style.titles }>
+				<div className={style.titles}>
 					<h1>PWA</h1>
 					<h3>Universal Builder</h3>
 				</div>
-				<div ref={ x => this.shapes = x } className={ style.shapes } />
+				<div ref={x => this.shapes = x} className={style.shapes} />
 			</header>
 		);
 	}
 }
+
+export default Hero;
