@@ -36,9 +36,7 @@ export function QLink(Component) {
 
 // TODO?: add `options` param here
 export function QRoute(Component) {
-	// ray test touch <
 	return function QRouteComponent(props) {
-	// ray test touch >
 		const { component, ...rest } = props;
 		if (component) rest.component = QRoute(component);
 		const ref = rest.ref = useRef(null);

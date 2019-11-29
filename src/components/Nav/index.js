@@ -8,12 +8,10 @@ export default class Nav extends React.Component {
 	};
 
 	componentDidMount() {
-		// ray test touch <
 		window.addEventListener('scroll', () => {
 			let stuck = window.pageYOffset > 0;
 			this.setState({stuck});
 		}, {passive:true});
-		// ray test touch >
 	}
 
 	shouldComponentUpdate(_, nxt) {

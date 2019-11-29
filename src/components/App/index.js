@@ -23,10 +23,7 @@ class App extends React.Component {
 
 		if (process.env.NODE_ENV === 'production') {
 			this.props.history.listen(obj => {
-				// ray test touch <
-				// if (window.ga) ga.send('pageview', {dp: obj.pathname});
 				if (window.ga) window.ga.send('pageview', {dp: obj.pathname});
-				// ray test touch >
 			});
 		}
 	}
