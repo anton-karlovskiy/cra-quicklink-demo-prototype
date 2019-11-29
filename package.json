@@ -34,7 +34,6 @@
     ]
   },
   "devDependencies": {
-    "customize-cra": "^0.9.1",
     "react-app-rewired": "^2.1.5",
     "webpack-route-manifest": "^1.1.0"
   }
