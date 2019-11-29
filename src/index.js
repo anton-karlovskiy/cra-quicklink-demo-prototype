@@ -1,23 +1,24 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// ray test touch <
-import { BrowserRouter } from '@components/Router';
-// ray test touch >
+import GAnalytics from 'ganalytics';
 
+import { BrowserRouter } from '@components/Router';
+import App from '@components/App';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// ray test touch <
 ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  // <App />,
   document.getElementById('root')
 );
-// ray test touch >
+
+if (process.env.NODE_ENV === 'production') {
+	window.ga = new GAnalytics('UA-XXXXXXXX-X');
+	// Additional production-specific code...
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

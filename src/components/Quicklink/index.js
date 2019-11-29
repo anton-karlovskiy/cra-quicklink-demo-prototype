@@ -3,7 +3,6 @@
  * Let's pretend this is a dependency file
  */
 
-// ray test touch <
 import { createElement, useEffect, useRef } from 'react';
 import { findDOMNode } from 'react-dom';
 import { prefetch, listen } from 'quicklink';
@@ -37,7 +36,9 @@ export function QLink(Component) {
 
 // TODO?: add `options` param here
 export function QRoute(Component) {
+	// ray test touch <
 	return function QRouteComponent(props) {
+	// ray test touch >
 		const { component, ...rest } = props;
 		if (component) rest.component = QRoute(component);
 		const ref = rest.ref = useRef(null);
@@ -72,4 +73,3 @@ export function QRoute(Component) {
 		return createElement(Component, rest);
 	};
 }
-// ray test touch >

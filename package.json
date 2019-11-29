@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ganalytics": "^3.1.2",
     "quicklink": "^2.0.0-alpha",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-loadable": "^5.5.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "route-manifest": "^1.0.0"
