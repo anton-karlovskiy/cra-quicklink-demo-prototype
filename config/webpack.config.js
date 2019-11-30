@@ -29,9 +29,8 @@ const eslint = require('eslint');
 
 const postcssNormalize = require('postcss-normalize');
 
-// ray test touch <
+// MEMO: route manifest configuration for quicklink
 const RouteManifest = require('webpack-route-manifest');
-// ray test touch >
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -314,11 +313,10 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
-        // ray test touch <
+        // MEMO: route manifest configuration for quicklink
         '@assets': `${path.resolve(__dirname, '../src/assets')}`,
         '@pages': `${path.resolve(__dirname, '../src/pages')}`,
         '@components': `${path.resolve(__dirname, '../src/components')}`,
-        // ray test touch >
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -669,7 +667,7 @@ module.exports = function(webpackEnv) {
           // The formatter is invoked directly in WebpackDevServerUtils during development
           formatter: isEnvProduction ? typescriptFormatter : undefined,
         }),
-      // ray test touch <
+      // MEMO: route manifest configuration for quicklink
       new RouteManifest({
         minify: true,
         filename: 'rmanifest.json',
@@ -680,7 +678,6 @@ module.exports = function(webpackEnv) {
           return out;
         }
       }),
-      // ray test touch >
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.
