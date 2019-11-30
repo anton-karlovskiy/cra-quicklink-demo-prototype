@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -41,4 +40,3 @@ const Article = ({ match }) => (
 );
 
 export default Article;
-// ray test touch >

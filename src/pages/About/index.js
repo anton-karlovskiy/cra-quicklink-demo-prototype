@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -38,4 +37,3 @@ const About = () => (
 );
 
 export default About;
-// ray test touch >

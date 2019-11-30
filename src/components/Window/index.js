@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -30,4 +29,3 @@ const Window = () => (
 );
 
 export default Window;
-// ray test touch >

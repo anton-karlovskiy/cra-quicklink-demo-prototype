@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -29,4 +28,3 @@ const Footer = () => (
 );
 
 export default Footer;
-// ray test touch >

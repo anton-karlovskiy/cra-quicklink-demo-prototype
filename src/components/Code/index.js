@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -24,11 +23,10 @@ const Code = ({ offset, label, text }) => {
 	if (offset) cls += ` ${style.offset}`;
 	return (
 		<pre className={cls}>
-			{label && <span className={ style.comment }># {label}</span>}
+			{label && <span className={style.comment}># {label}</span>}
 			<span className={style.text}>$ {text}</span>
 		</pre>
 	);
 };
 
 export default Code;
-// ray test touch >

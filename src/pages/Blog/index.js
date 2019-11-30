@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -49,4 +48,3 @@ const Blog = () => (
 );
 
 export default Blog;
-// ray test touch >

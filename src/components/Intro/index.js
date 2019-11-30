@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -26,4 +25,3 @@ const Intro = ({children}) => (
 );
 
 export default Intro;
-// ray test touch >

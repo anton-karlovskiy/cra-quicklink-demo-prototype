@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -30,4 +29,3 @@ export { BrowserRouter, withRouter };
 
 export const Link = QLink(L);
 export const Route = QRoute(R);
-// ray test touch >

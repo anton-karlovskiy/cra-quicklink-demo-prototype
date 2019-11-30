@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -42,4 +41,3 @@ const Home = () => (
 );
 
 export default Home;
-// ray test touch >
