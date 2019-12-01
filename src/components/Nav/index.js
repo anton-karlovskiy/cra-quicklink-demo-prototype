@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-// TODO: convert to functional component
 import React, { useEffect, useState } from 'react';
 
 import { Link } from '@components/Router';

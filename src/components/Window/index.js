@@ -22,7 +22,6 @@ import style from './index.module.css';
 const Window = () => (
 	<div className={style.window_wrap}>
 		<div className={style.window}>
-			{/* TODO: double check necessity */}
 			<object data={VIDEO} type="image/svg+xml" title="pwa init" />
 		</div>
 	</div>

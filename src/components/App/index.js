@@ -36,13 +36,6 @@ const App = ({ history }) => {
 			.then(data => {
 				window._rmanifest_ = data;
 			});
-
-		// TODO: might drop
-		if (process.env.NODE_ENV === 'production') {
-			history.listen(obj => {
-				if (window.ga) window.ga.send('pageview', {dp: obj.pathname});
-			});
-		}
 	// eslint-disable-next-line
 	}, []);
 

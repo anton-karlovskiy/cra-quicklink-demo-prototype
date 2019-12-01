@@ -19,7 +19,6 @@ import React from 'react';
 import style from './index.module.css';
 
 const Footer = () => (
-	// TODO: might be adjusted
 	<footer className={style.footer}>
 		<span>Made with </span>
 		<i className={style.heart} />

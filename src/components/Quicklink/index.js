@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -55,10 +54,8 @@ class ClassWrapper extends Component {
 	render() {
 		const { children } = this.props;
 		return (
-			<>
-			 {children}
-			</>
-		)
+			<>{children}</>
+		);
 	}
 }
 
@@ -103,4 +100,3 @@ export function QRoute(Component) {
 		);
 	};
 }
-// ray test touch >
