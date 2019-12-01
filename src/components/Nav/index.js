@@ -1,4 +1,3 @@
-// ray test touch <
 /*
  * Copyright 2019 Google LLC
  *
@@ -16,49 +15,51 @@
  */
 
 // TODO: convert to functional component
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Link } from '@components/Router';
 import style from './index.module.css';
 
-class Nav extends Component {
-	state = {
-		stuck: false,
-	};
+const Nav = () => {
+	const [stuck, setStuck] = useState(false);
+	useEffect(() => {
+		const handleNavStuck = () => {
+			setStuck(window.pageYOffset > 0);
+		};
 
-	componentDidMount() {
-		window.addEventListener('scroll', () => {
-			let stuck = window.pageYOffset > 0;
-			this.setState({stuck});
-		}, {passive:true});
-	}
-
-	shouldComponentUpdate(_, nxt) {
-		let now = this.state;
-		return now.stuck !== nxt.stuck;
-	}
-
-	render() {
-		let cls = style.nav;
-		if (this.state.stuck) {
-			cls += ` ${style.stuck}`;
-		}
-
-		return (
-			<nav className={cls}>
-				<ul className={style.links}>
-					<li><Link to="/">Home</Link></li>
-					<li><Link to="/blog">Blog</Link></li>
-					<li><Link to="/about">About</Link></li>
-				</ul>
-				<ul>
-					<li><a href="https://github.com/lukeed/pwa" className={style.link_external}>GitHub</a></li>
-					<li><a href="https://github.com/lukeed/pwa" className={style.link_external}>Documentation</a></li>
-				</ul>
-			</nav>
+		window.addEventListener(
+			'scroll',
+			handleNavStuck,
+			{passive:true}
 		);
+		
+		return () => {
+			window.removeEventListener(
+				'scroll',
+				handleNavStuck,
+				{passive:true}
+			);
+		}
+	}, []);
+
+	let cls = style.nav;
+	if (stuck) {
+		cls += ` ${style.stuck}`;
 	}
-}
+
+	return (
+		<nav className={cls}>
+			<ul className={style.links}>
+				<li><Link to="/">Home</Link></li>
+				<li><Link to="/blog">Blog</Link></li>
+				<li><Link to="/about">About</Link></li>
+			</ul>
+			<ul>
+				<li><a href="https://github.com/lukeed/pwa" className={style.link_external}>GitHub</a></li>
+				<li><a href="https://github.com/lukeed/pwa" className={style.link_external}>Documentation</a></li>
+			</ul>
+		</nav>
+	);
+};
 
 export default Nav;
-// ray test touch >
