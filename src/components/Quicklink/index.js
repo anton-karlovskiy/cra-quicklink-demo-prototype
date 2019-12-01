@@ -20,7 +20,9 @@
  * Let's pretend this is a dependency file
  */
 
-import { createElement, useEffect, useRef } from 'react';
+// ray test touch <
+import React, { createElement, useEffect, useRef, Component } from 'react';
+// ray test touch >
 import { findDOMNode } from 'react-dom';
 import { prefetch, listen } from 'quicklink';
 import rmanifest from 'route-manifest';
@@ -51,12 +53,28 @@ export function QLink(Component) {
 	}
 }
 
+// ray test touch <
+class ClassWrapper extends Component {
+	render() {
+		const { children } = this.props;
+		return (
+			<>
+			 {children}
+			</>
+		)
+	}
+}
+// ray test touch >
+
 // TODO?: add `options` param here
 export function QRoute(Component) {
 	return function QRouteComponent(props) {
 		const { component, ...rest } = props;
 		if (component) rest.component = QRoute(component);
-		const ref = rest.ref = useRef(null);
+		// ray test touch <
+		// const ref = rest.ref = useRef(null);
+		const ref = useRef(null);
+		// ray test touch >
 
 		useEffect(() => {
 			console.log('I heard route change~!');
@@ -73,7 +91,7 @@ export function QRoute(Component) {
 					console.log('QRoute is already watching', elem);
 				} else {
 					console.log('QRoute will run `quicklink` on', elem);
-					listen({ el: elem });
+					listen({el: elem});
 					wrappers.add(elem);
 				}
 			}
@@ -85,7 +103,15 @@ export function QRoute(Component) {
 			}
 		}, [ref]);
 
-		return createElement(Component, rest);
+		// ray test touch <
+		// return createElement(Component, rest);
+		// return <Component {...rest} />;
+		return (
+			<ClassWrapper ref={ref}>
+				<Component {...rest} />
+			</ClassWrapper>
+		);
+		// ray test touch >
 	};
 }
 // ray test touch >
