@@ -16,8 +16,7 @@
 
 import React, { useEffect, lazy, Suspense } from 'react';
 
-// TODO: use hook instead of withRouter or might not needed at all
-import { Route, withRouter } from '@components/Router';
+import { Route } from '@components/Router';
 import Footer from '@components/Footer';
 import Hero from '@components/Hero';
 import style from './index.module.css';
@@ -28,7 +27,7 @@ const About = lazy(() => import(/* webpackChunkName: "about" */ '@pages/About'))
 const Article = lazy(() => import(/* webpackChunkName: "article" */ '@pages/Article'));
 const Blog = lazy(() => import(/* webpackChunkName: "blog" */ '@pages/Blog'));
 
-const App = ({ history }) => {
+const App = () => {
 	useEffect(() => {
 		// attach route manifest to global
 		fetch('/rmanifest.json')
@@ -55,4 +54,4 @@ const App = ({ history }) => {
 	);
 }
 
-export default withRouter(App);
+export default App;
