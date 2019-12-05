@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 
 import { Route } from '@components/Router';
 import Footer from '@components/Footer';
@@ -27,31 +27,19 @@ const About = lazy(() => import(/* webpackChunkName: "about" */ '@pages/About'))
 const Article = lazy(() => import(/* webpackChunkName: "article" */ '@pages/Article'));
 const Blog = lazy(() => import(/* webpackChunkName: "blog" */ '@pages/Blog'));
 
-const App = () => {
-	useEffect(() => {
-		// attach route manifest to global
-		fetch('/rmanifest.json')
-			.then(response => response.json())
-			.then(data => {
-				window._rmanifest_ = data;
-			});
-	// eslint-disable-next-line
-	}, []);
-
-	return (
-		<div className={style.app}>
-			<Hero />
-			<main className={style.wrapper}>
-				<Suspense fallback={<div>Loading...</div>}>
-					<Route path="/" exact component={Home} />
-					<Route path="/blog" exact component={Blog} />
-					<Route path="/blog/:title" component={Article} />
-					<Route path="/about" exact component={About} />
-				</Suspense>
-			</main>
-			<Footer />
-		</div>
-	);
-}
+const App = () => (
+	<div className={style.app}>
+		<Hero />
+		<main className={style.wrapper}>
+			<Suspense fallback={<div>Loading...</div>}>
+				<Route path="/" exact component={Home} />
+				<Route path="/blog" exact component={Blog} />
+				<Route path="/blog/:title" component={Article} />
+				<Route path="/about" exact component={About} />
+			</Suspense>
+		</main>
+		<Footer />
+	</div>
+);
 
 export default App;
