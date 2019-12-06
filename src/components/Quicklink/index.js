@@ -27,7 +27,7 @@ import rmanifest from 'route-manifest';
 const wrappers = new Set();
 
 const fetchWithAssets = async url => {
-	await prefetch(url);
+	await prefetch(url); // MEMO: explicitly prefetch route URLs corresponding to /, /about, /blog, /blog/:title
 	try {
     if (!window._rmanifest_) {
       console.log('[components Quicklink fetchWithAssets] route manifest is not stored');
@@ -43,7 +43,7 @@ const fetchWithAssets = async url => {
 		const chunkURLs = entry.files.map(file => file.href);
 		if (chunkURLs.length) {
 			console.log(`[components Quicklink fetchWithAssets ${url}] chunkURLs => `, chunkURLs);
-			prefetch(chunkURLs);
+			prefetch(chunkURLs); // MEMO: explicitly prefetch chunk URLs e.g. about.564f23ba.chunk.js
 		}
   } catch (error) {
     console.log('[components Quicklink fetchWithAssets] error => ', error);
@@ -97,7 +97,7 @@ function QRoute(Component) {
 					console.log('[components Quicklink QRoute] QRoute is already watching', elem);
 				} else {
 					console.log('[components Quicklink QRoute] QRoute will run `quicklink` on', elem);
-					listen({el: elem});
+					listen({el: elem}); // MEMO: calling listen for the DOM corresponding to route component e.g. /pages/Home, /pages/About, /pages/Article, /pages/Blog
 					wrappers.add(elem);
 				}
 			}
