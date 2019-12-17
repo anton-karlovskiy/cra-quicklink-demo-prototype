@@ -97,7 +97,7 @@ function QRoute(Component) {
 					console.log('[components Quicklink QRoute] QRoute is already watching', elem);
 				} else {
 					console.log('[components Quicklink QRoute] QRoute will run `quicklink` on', elem);
-					listen({el: elem}); // MEMO: calling listen for the DOM corresponding to route component e.g. /pages/Home, /pages/About, /pages/Article, /pages/Blog
+					listen({el: elem}); // MEMO: calling listen for the DOM elements corresponding to route component e.g. /pages/Home, /pages/About, /pages/Article, /pages/Blog
 					wrappers.add(elem);
 				}
 			}

@@ -16,8 +16,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+// ray test touch <
+import { BrowserRouter } from 'react-router-dom';
 
-import { BrowserRouter } from '@components/Router';
+// import { BrowserRouter } from '@components/Router';
+// ray test touch >
 import App from '@components/App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
