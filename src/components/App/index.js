@@ -14,13 +14,9 @@
  * limitations under the License.
  */
 
-import React, { lazy, Suspense, useEffect } from 'react';
-// ray test touch <
+import React, { lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
-// import { listen } from 'quicklink';
 
-// import { Route } from '@components/Router';
-// ray test touch >
 import Footer from '@components/Footer';
 import Hero from '@components/Hero';
 import style from './index.module.css';
@@ -31,29 +27,19 @@ const About = lazy(() => import(/* webpackChunkName: "about" */ '@pages/About'))
 const Article = lazy(() => import(/* webpackChunkName: "article" */ '@pages/Article'));
 const Blog = lazy(() => import(/* webpackChunkName: "blog" */ '@pages/Blog'));
 
-// ray test touch <
-const App = () => {
-	useEffect(() => {
-		console.log('ray : ***** [App] rendering done');
-		window.addEventListener('load', () => {
-			console.log('ray : ***** [App] load event done');
-		});
-	}, []);
-	return (
-		<div className={style.app}>
-			<Hero />
-			<main className={style.wrapper}>
-				<Suspense fallback={<div>Loading...</div>}>
-					<Route path="/" exact component={Home} />
-					<Route path="/blog" exact component={Blog} />
-					<Route path="/blog/:title" component={Article} />
-					<Route path="/about" exact component={About} />
-				</Suspense>
-			</main>
-			<Footer />
-		</div>
-	);
-};
-// ray test touch >
+const App = () => (
+	<div className={style.app}>
+		<Hero />
+		<main className={style.wrapper}>
+			<Suspense fallback={<div>Loading...</div>}>
+				<Route path="/" exact component={Home} />
+				<Route path="/blog" exact component={Blog} />
+				<Route path="/blog/:title" component={Article} />
+				<Route path="/about" exact component={About} />
+			</Suspense>
+		</main>
+		<Footer />
+	</div>
+);
 
 export default App;

@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-// ray test touch <
 import React, { useEffect } from 'react';
 
-import { listenWithRmanifest } from '../../utils';
-// ray test touch >
 import Intro from '@components/Intro';
+import { listenWithRmanifest } from '../../utils';
 import style from './index.module.css';
 
-// ray test touch <
 const About = () => {
 	useEffect(() => {
 		console.log('ray : ***** [About] rendering done');
@@ -46,6 +43,5 @@ const About = () => {
 		</div>
 	);
 };
-// ray test touch >
 
 export default About;

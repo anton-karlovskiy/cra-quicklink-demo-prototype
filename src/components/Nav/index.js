@@ -15,11 +15,8 @@
  */
 
 import React, { useEffect, useState } from 'react';
-// ray test touch <
 import { Link } from 'react-router-dom';
 
-// import { Link } from '@components/Router';
-// ray test touch >
 import style from './index.module.css';
 
 const Nav = () => {

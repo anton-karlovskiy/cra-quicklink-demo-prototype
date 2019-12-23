@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-// ray test touch <
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-// import { Link } from '@components/Router';
-import { listenWithRmanifest } from '../../utils';
-// ray test touch >
 import Intro from '@components/Intro';
+import { listenWithRmanifest } from '../../utils';
 import style from './index.module.css';
 
-// ray test touch <
 const Article = ({ match }) => {
 	useEffect(() => {
 		console.log('ray : ***** [Article] rendering done');
@@ -50,6 +46,5 @@ const Article = ({ match }) => {
 		</article>
 	);
 };
-// ray test touch >
 
 export default Article;

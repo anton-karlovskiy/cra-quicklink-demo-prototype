@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-// ray test touch <
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { listenWithRmanifest } from '../../utils';
-// import { Link } from '@components/Router';
-// ray test touch >
 import Intro from '@components/Intro';
 import Card from '@components/Card';
 import style from './index.module.css';
 
-// ray test touch <
 const Blog = () => {
 	useEffect(() => {
 		console.log('ray : ***** [Blog] rendering done');
@@ -58,6 +54,5 @@ const Blog = () => {
 		</div>
 	);
 };
-// ray test touch >
 
 export default Blog;

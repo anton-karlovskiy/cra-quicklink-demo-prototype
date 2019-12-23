@@ -1,5 +1,4 @@
 
-// ray test touch <
 import { listen } from './quicklink/index.mjs';
 
 const listenWithRmanifest = async () => {
@@ -25,4 +24,3 @@ const listenWithRmanifest = async () => {
 export {
   listenWithRmanifest
 };
-// ray test touch >
